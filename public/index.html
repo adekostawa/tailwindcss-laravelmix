@@ -8,53 +8,18 @@
     <link href="css/app.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/bc-logo-3.png" type="image/x-icon">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <style>
-      .carousel-open:checked+.carousel-item {
-        position: static;
-        opacity: 100;
-      }
-    
-      .carousel-item {
-        -webkit-transition: opacity 0.6s ease-out;
-        transition: opacity 0.6s ease-out;
-      }
-    
-      #carousel-1:checked~.control-1,
-      #carousel-2:checked~.control-2,
-      #carousel-3:checked~.control-3 {
-        display: block;
-      }
-    
-      .carousel-indicators {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        bottom: 2%;
-        left: 0;
-        right: 0;
-        text-align: center;
-        z-index: 10;
-      }
-    
-      #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
-      #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
-      #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
-        color: #2b6cb0;
-        /*Set to match the Tailwind colour you want the active one to be */
-      }
-    </style>
+     <!-- Swiper's CSS -->
+     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     
 </head>
 <body class="bg-gray-100">
   <!-- Navbar -->
     <nav class="bg-white shadow dark:bg-gray-800">
-        <div class="w-full fixed bg-white lg:px-12 px-3 xs:px-3 py-4 mx-auto md:flex md:justify-between md:items-center z-50">
+        <div class="w-full fixed bg-white lg:px-12 px-3 xs:px-3 py-3 mx-auto md:flex md:justify-between md:items-center z-50">
             <div class="flex items-center justify-between">
             <a href="/">
                 <img class="h-10 mb-4 md:mb-0" src="images/logo-belanja-cetak-2021.png" alt="" srcset="">
-            </a>
-                
+            </a>                
                 <!-- Mobile menu button -->
                 <div class="flex md:hidden">
                     <button type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
@@ -64,7 +29,6 @@
                     </button>
                 </div>
             </div>
-
             <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
             <div class="items-center md:flex">
                 <div class="flex flex-col md:flex-row md:mx-6">
@@ -73,8 +37,7 @@
                     <a class="my-1 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="about.html">Tentang Kami</a>
                     <a class="my-1 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Kontak</a>
                 </div>
-
-                <div class="flex justify-center md:block">
+                <div class="flex md:block">
                     <button class="bg-indigo-500 px-4 py-2 text-base text-white hover:bg-indigo-600 rounded-lg" onclick="window.open('https://wa.wizard.id/5ccbf5')">Lacak Pesanan</button>
                 </div>
             </div>
@@ -82,152 +45,102 @@
     </nav>
 
   <!-- Hero -->
-    <div class="carousel relative rounded overflow-hidden shadow-xl">
-        <div class="carousel-inner relative overflow-hidden w-full mt-6">
-            <!--Slide 1-->
-            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden=""
-            checked="checked">
-            <div class="carousel-item absolute opacity-0 bg-center" style="height:500px; background-image: url(https://mdbootstrap.com/img/new/slides/052.jpg)">
-            
-            </div>
-            <label for="carousel-3"
-            class="control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto flex justify-center content-center"><i
-                class="fas fa-angle-left mt-3"></i></label>
-            <label for="carousel-2"
-            class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"><i
-                class="fas fa-angle-right mt-3"></i></label>
-        
-            <!--Slide 2-->
-            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item absolute opacity-0 bg-center" style="height:500px; background-image: url(https://mdbootstrap.com/img/new/slides/043.jpg)">
-            </div>
-            <label for="carousel-1"
-            class=" control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"><i
-                class="fas fa-angle-left mt-3"></i></label>
-            <label for="carousel-3"
-            class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"><i
-                class="fas fa-angle-right mt-3"></i></label>
-        
-            <!--Slide 3-->
-            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item absolute opacity-0" style="height:500px; background-image: url(https://mdbootstrap.com/img/new/slides/054.jpg)">
-            </div>
-            <label for="carousel-2"
-            class="control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"><i
-                class="fas fa-angle-left mt-3"></i></label>
-            <label for="carousel-1"
-            class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"><i
-                class="fas fa-angle-right mt-3"></i></label>
-        
-            <!-- Add additional indicators for each slide-->
-            <ol class="carousel-indicators">
-            <li class="inline-block mr-3">
-                <label for="carousel-1"
-                class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
-            </li>
-            <li class="inline-block mr-3">
-                <label for="carousel-2"
-                class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
-            </li>
-            <li class="inline-block mr-3">
-                <label for="carousel-3"
-                class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
-            </li>
-            </ol>
-        
+  <div class="pt-16">
+    <div class="swiper mySwiper shadow-lg">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              class="object-cover w-full h-96"
+              src="https://source.unsplash.com/user/erondu/3000x900"
+              alt="apple watch photo"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="object-cover w-full h-96"
+              src="https://source.unsplash.com/collection/190727/3000x900"
+              alt="apple watch photo"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="object-cover w-full h-96"
+              src="https://source.unsplash.com/collection/190728/3000x900"
+              alt="apple watch photo"
+            />
+          </div>
         </div>
-    </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+  </div>
 
   <!-- Feature -->
     <section class="text-gray-600 body-font bg-white">
         <div class="max-w-2xl mx-auto py-16 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div class="flex flex-wrap -m-4">
-            <div class="p-4 md:w-1/4">
-            <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                <div class="flex items-center mb-3">
-                <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                    </svg>
+            <div class="flex flex-wrap -m-4">
+                <div class="p-4 md:w-1/2 lg:w-1/4">
+                    <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col hover:shadow-md">
+                        <div class="flex-col text-center items-center mb-2">
+                        <div class="w-12 h-12 inline-flex items-center text-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0 mb-2">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-gray-900 text-lg title-font font-medium text-center">Dekat</h2>
+                        </div>
+                        <div class="flex-grow">
+                        <p class="leading-relaxed text-sm text-center">Lebih mudah dijangkau oleh para pengguna, karena adanya ratusan agen Belanja Cetak yang bermitra dengan kami</p>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="text-gray-900 text-lg title-font font-medium">Shooting Stars</h2>
+                <div class="p-4 md:w-1/2 lg:w-1/4">
+                    <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col hover:shadow-md">
+                        <div class="flex-col text-center items-center mb-2">
+                        <div class="w-12 h-12 inline-flex items-center text-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0 mb-2">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-gray-900 text-lg title-font font-medium text-center">Aman</h2>
+                        </div>
+                        <div class="flex-grow">
+                        <p class="leading-relaxed text-sm text-center">Seluruh pemesanan hingga pembayaran akan di tangani langsung oleh agen belanja cetak yang telah berkompeten</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex-grow">
-                <p class="leading-relaxed text-sm">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </a>
+                <div class="p-4 md:w-1/2 lg:w-1/4">
+                    <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col hover:shadow-md">
+                        <div class="flex-col text-center items-center mb-2">
+                        <div class="w-12 h-12 inline-flex items-center text-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0 mb-2">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-gray-900 text-lg title-font font-medium text-center">Mudah</h2>
+                        </div>
+                        <div class="flex-grow">
+                        <p class="leading-relaxed text-sm text-center">Proses transaksi mudah dilakukan oleh para agen belanjacetak, serta kemudahan pengguna dalam memilih template design</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
-            <div class="p-4 md:w-1/4">
-            <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                <div class="flex items-center mb-3">
-                <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                </div>
-                <h2 class="text-gray-900 text-lg title-font font-medium">The Catalyzer</h2>
-                </div>
-                <div class="flex-grow">
-                <p class="leading-relaxed text-sm">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-                </div>
-            </div>
-            </div>
-            <div class="p-4 md:w-1/4">
-            <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                <div class="flex items-center mb-3">
-                <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <circle cx="6" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                    </svg>
-                </div>
-                <h2 class="text-gray-900 text-lg title-font font-medium">Neptune</h2>
-                </div>
-                <div class="flex-grow">
-                <p class="leading-relaxed text-sm">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-                </div>
-            </div>
-            </div>
-            <div class="p-4 md:w-1/4">
-            <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                <div class="flex items-center mb-3">
-                <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <circle cx="6" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                    </svg>
-                </div>
-                <h2 class="text-gray-900 text-lg title-font font-medium">Neptune</h2>
-                </div>
-                <div class="flex-grow">
-                <p class="leading-relaxed text-sm">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </a>
+                <div class="p-4 md:w-1/2 lg:w-1/4">
+                    <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col hover:shadow-md">
+                        <div class="flex-col text-center items-center mb-2">
+                        <div class="w-12 h-12 inline-flex items-center text-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0 mb-2">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-gray-900 text-lg title-font font-medium text-center">Gratis Ongkir</h2>
+                        </div>
+                        <div class="flex-grow">
+                        <p class="leading-relaxed text-sm text-center">Pengiriman dari workshop kami ke sluruh Dropship Agen Belanja cetak tanpa dikenakan biaya tambahan</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
         </div>
     </section>
 
@@ -308,139 +221,123 @@
         <h2 class="text-2xl font-semibold text-gray-900">Rekomendasi Produk</h2>
         <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             <div class="group relative">
-                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                    <img src="images/AGP-IMK-01.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-t-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
-                <div class="mt-4 flex justify-between">
+                <div class="mt-2 text-center">
                     <div>
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
+                        <h3 class="text-gray-500 text-base font-semibold">
                             <a href="#">
                             <span aria-hidden="true" class="absolute inset-0"></span>
-                            Category
+                            Amplop Angpao
                             </a>
                         </h3>
-                        <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
                     </div>
-                    <p class="text-lg font-semibold text-gray-700">$35</p>
                 </div>
             </div>
             <div class="group relative">
                 <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                     <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
-                <div class="mt-4 flex justify-between">
+                <div class="mt-2 text-center">
                     <div>
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
+                        <h3 class="text-gray-500 text-base font-semibold">
                             <a href="#">
                             <span aria-hidden="true" class="absolute inset-0"></span>
-                            Category
+                            Amplop Angpao
                             </a>
                         </h3>
-                        <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
                     </div>
-                    <p class="text-lg font-semibold text-gray-700">$35</p>
                 </div>
             </div>
             <div class="group relative">
                 <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                    <img src="images/AGP-IMK-03.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
-                <div class="mt-4 flex justify-between">
+                <div class="mt-2 text-center">
                     <div>
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
+                        <h3 class="text-gray-500 text-base font-semibold">
                             <a href="#">
                             <span aria-hidden="true" class="absolute inset-0"></span>
-                            Category
+                            Amplop Angpao
                             </a>
                         </h3>
-                        <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
                     </div>
-                    <p class="text-lg font-semibold text-gray-700">$35</p>
                 </div>
             </div>
             <div class="group relative">
                 <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                    <img src="images/AGP-IMK-04.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
-                <div class="mt-4 flex justify-between">
+                <div class="mt-2 text-center">
                     <div>
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
+                        <h3 class="text-gray-500 text-base font-semibold">
                             <a href="#">
                             <span aria-hidden="true" class="absolute inset-0"></span>
-                            Category
+                            Amplop Angpao
                             </a>
                         </h3>
-                        <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
                     </div>
-                    <p class="text-lg font-semibold text-gray-700">Rp. 2000,-</p>
                 </div>
             </div>
             <div class="group relative">
                 <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                    <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
-                <div class="mt-4 flex justify-between">
+                <div class="mt-2 text-center">
                     <div>
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
+                        <h3 class="text-gray-500 text-base font-semibold">
                             <a href="#">
                             <span aria-hidden="true" class="absolute inset-0"></span>
-                            Category
+                            Amplop Angpao
                             </a>
                         </h3>
-                        <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
                     </div>
-                    <p class="text-lg font-semibold text-gray-700">$35</p>
                 </div>
             </div>
             <div class="group relative">
                 <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                    <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
-                <div class="mt-4 flex justify-between">
+                <div class="mt-2 text-center">
                     <div>
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
+                        <h3 class="text-gray-500 text-base font-semibold">
                             <a href="#">
                             <span aria-hidden="true" class="absolute inset-0"></span>
-                            Category
+                            Amplop Angpao
                             </a>
                         </h3>
-                        <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
                     </div>
-                    <p class="text-lg font-semibold text-gray-700">$35</p>
                 </div>
             </div>
             <div class="group relative">
                 <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                    <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
-                <div class="mt-4 flex justify-between">
+                <div class="mt-2 text-center">
                     <div>
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
+                        <h3 class="text-gray-500 text-base font-semibold">
                             <a href="#">
                             <span aria-hidden="true" class="absolute inset-0"></span>
-                            Category
+                            Amplop Angpao
                             </a>
                         </h3>
-                        <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
                     </div>
-                    <p class="text-lg font-semibold text-gray-700">$35</p>
                 </div>
             </div>
             <div class="group relative">
                 <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                    <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
-                <div class="mt-4 flex justify-between">
+                <div class="mt-2 text-center">
                     <div>
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
+                        <h3 class="text-gray-500 text-base font-semibold">
                             <a href="#">
                             <span aria-hidden="true" class="absolute inset-0"></span>
-                            Category
+                            Amplop Angpao
                             </a>
                         </h3>
-                        <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
                     </div>
-                    <p class="text-lg font-semibold text-gray-700">$35</p>
                 </div>
             </div>
         </div>    
@@ -449,148 +346,131 @@
 
   <!-- Newest Produk -->
     <section class="bg-white">
-        <div class="max-w-2xl mx-auto py-16 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
-            <h2 class="text-2xl font-semibold text-gray-900">Produk Unggulan</h2>
-            <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                <div class="group relative">
-                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                        <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
-                                <a href="#">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Category
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
-                        </div>
-                        <p class="text-lg font-semibold text-gray-700">$35</p>
+    <div class="max-w-2xl mx-auto py-16 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h2 class="text-2xl font-semibold text-gray-900">Produk Unggulan</h2>
+        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                </div>
+                <div class="mt-2 text-center">
+                    <div>
+                        <h3 class="text-gray-500 text-base font-semibold">
+                            <a href="#">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            Amplop Angpao
+                            </a>
+                        </h3>
                     </div>
                 </div>
-                <div class="group relative">
-                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                        <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
-                                <a href="#">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Category
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
-                        </div>
-                        <p class="text-lg font-semibold text-gray-700">$35</p>
+            </div>
+            <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                </div>
+                <div class="mt-2 text-center">
+                    <div>
+                        <h3 class="text-gray-500 text-base font-semibold">
+                            <a href="#">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            Amplop Angpao
+                            </a>
+                        </h3>
                     </div>
                 </div>
-                <div class="group relative">
-                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                        <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
-                                <a href="#">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Category
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
-                        </div>
-                        <p class="text-lg font-semibold text-gray-700">$35</p>
+            </div>
+            <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                </div>
+                <div class="mt-2 text-center">
+                    <div>
+                        <h3 class="text-gray-500 text-base font-semibold">
+                            <a href="#">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            Amplop Angpao
+                            </a>
+                        </h3>
                     </div>
                 </div>
-                <div class="group relative">
-                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                        <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
-                                <a href="#">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Category
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
-                        </div>
-                        <p class="text-lg font-semibold text-gray-700">Rp. 2000,-</p>
+            </div>
+            <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                </div>
+                <div class="mt-2 text-center">
+                    <div>
+                        <h3 class="text-gray-500 text-base font-semibold">
+                            <a href="#">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            Amplop Angpao
+                            </a>
+                        </h3>
                     </div>
                 </div>
-                <div class="group relative">
-                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                        <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
-                                <a href="#">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Category
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
-                        </div>
-                        <p class="text-lg font-semibold text-gray-700">$35</p>
+            </div>
+            <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                </div>
+                <div class="mt-2 text-center">
+                    <div>
+                        <h3 class="text-gray-500 text-base font-semibold">
+                            <a href="#">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            Amplop Angpao
+                            </a>
+                        </h3>
                     </div>
                 </div>
-                <div class="group relative">
-                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                        <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
-                                <a href="#">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Category
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
-                        </div>
-                        <p class="text-lg font-semibold text-gray-700">$35</p>
+            </div>
+            <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                </div>
+                <div class="mt-2 text-center">
+                    <div>
+                        <h3 class="text-gray-500 text-base font-semibold">
+                            <a href="#">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            Amplop Angpao
+                            </a>
+                        </h3>
                     </div>
                 </div>
-                <div class="group relative">
-                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                        <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
-                                <a href="#">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Category
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
-                        </div>
-                        <p class="text-lg font-semibold text-gray-700">$35</p>
+            </div>
+            <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                </div>
+                <div class="mt-2 text-center">
+                    <div>
+                        <h3 class="text-gray-500 text-base font-semibold">
+                            <a href="#">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            Amplop Angpao
+                            </a>
+                        </h3>
                     </div>
                 </div>
-                <div class="group relative">
-                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                        <img src="https://dummyimage.com/256x256/cccccc/000000" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font uppercase">
-                                <a href="#">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Category
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-lg font-semibold text-gray-700">Black</p>
-                        </div>
-                        <p class="text-lg font-semibold text-gray-700">$35</p>
+            </div>
+            <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <img src="images/AGP-IMK-02.png" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                </div>
+                <div class="mt-2 text-center">
+                    <div>
+                        <h3 class="text-gray-500 text-base font-semibold">
+                            <a href="#">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            Amplop Angpao
+                            </a>
+                        </h3>
                     </div>
                 </div>
-                <!-- More products... -->
-            </div>    
-        </div>
+            </div>
+        </div>    
+    </div>
     </section>
 
   <!-- Members  -->
@@ -751,7 +631,7 @@
         </div>
     </section>
 
-  <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-white dark:bg-gray-800">
         <div class="container px-6 py-10 mx-auto">
             <div class="lg:flex">
@@ -824,5 +704,27 @@
     </footer>
 
     <script src="/js/app.js"></script>
+
+     <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+
 </body>
 </html>
